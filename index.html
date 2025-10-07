@@ -1,29 +1,52 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <br />
+    <br />
+    <br />
+    <br />
     <title>Raúl Salas Sahuquillo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" type="image/png" href="assets/logors.png" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
+    
+    <style>
+      html, body {
+        overflow: auto !important; /* Fuerza a que haya scroll si el contenido es largo */
+        height: auto !important;
+      }
+      
+      #wrapper, #overlay {
+        height: auto !important; /* Anula la altura fija de los contenedores */
+        min-height: 100%;
+        position: relative !important;
+      }
+
+      /* La plantilla usa Flexbox para centrar. Lo cambiamos para que alinee arriba */
+      body, #main {
+        align-items: flex-start !important; 
+      }
+      
+      #main {
+        position: relative !important;
+        padding: 4em 2em; /* Añadimos algo de espacio */
+      }
+    </style>
+    </head>
   <body class="is-preload">
     <div id="wrapper">
       <div id="bg"></div>
       <div id="overlay"></div>
       <div id="main">
 
-        <!-- Header -->
         <header id="header">
-          <!-- Logo visible en la página -->
           <a href="index.html" class="logors">
             <img src="assets/logors.png" alt="Logo Raúl Salas" width="250" />
           </a>
-
           <h1>Raúl Salas Sahuquillo</h1>
           <p>Game Developer &nbsp;&bull;&nbsp; Software Engineer &nbsp;&bull;&nbsp; Web Developer</p>
-
           <nav>
             <ul>
               <li><a href="https://github.com/RaulSalasSahuquillo" class="icon brands fa-github"><span class="label">Github</span></a></li>
@@ -34,15 +57,43 @@
           </nav>
         </header>
 
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <section id="sobre-mi" style="padding: 2em 0; text-align: left; max-width: 650px; margin: 40px; font-family: Copperplate">
+          <h2 style="font-size: 3em; text-align: center; margin-bottom: 1em;">Sobre mí</h2>
+          <p>
+            ¡Hola! Soy Raúl, un estudiante de secundaria que está aprendiendo desarrollo de videojuegos y programación. Me apasiona crear juegos y aplicaciones, mientras aprendo nuevas habilidades en el proceso.
+          </p>
+          <br />
+          <p>
+            Actualmente, estoy trabajando en mi propio proyecto de videojuego llamado "ENEI PROJECT". Además, estoy aprendiendo a programar en varios lenguajes como C, Python, Java y HTML. Estoy abierto a nuevas oportunidades y colaboraciones en el mundo de la programación.
+          </p>
+        </section>
+        
         <footer id="footer">
           <span class="copyright">&copy; Raúl Salas Sahuquillo | raul@raulsalas.com | ENEI PROJECT</span>
         </footer>
 
       </div>
     </div>
+
     <script>
       window.onload = function() { document.body.classList.remove('is-preload'); }
-      window.ontouchmove = function() { return false; }
+      // window.ontouchmove = function() { return false; } 
       window.onorientationchange = function() { document.body.scrollTop = 0; }
     </script>
   </body>

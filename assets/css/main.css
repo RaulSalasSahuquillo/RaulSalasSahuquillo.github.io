@@ -719,6 +719,13 @@ input, select, textarea {
 		text-align: center;
 		width: 100%;
 	}
+	#sobre-mi h2 {
+  	font-size: 2.2em;
+  	font-weight: bold;
+  	text-transform: uppercase;
+  	border-bottom: 3px solid #ffffff;
+  	padding-bottom: 0.3em;
+	}
 
 /* Wide */
 
@@ -1073,3 +1080,5 @@ input, select, textarea {
 		#header nav {
 			padding: 0 1em;
 		} }
+
+		/* === Overrides de layout: dejar de centrar a pantalla completa y alinear izquierdo === */
