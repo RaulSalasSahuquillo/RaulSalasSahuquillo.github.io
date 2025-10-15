@@ -77,7 +77,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #fff;
+		background: #ffffff00;
 		overflow: hidden;
 	}
 
@@ -205,98 +205,47 @@ input, select, textarea {
 
 /* BG */
 
+	/* === Fondo responsivo con scroll horizontal continuo (100% fiable) === */
 	#bg {
-		-moz-animation: bg 60s linear infinite;
-		-webkit-animation: bg 60s linear infinite;
-		-ms-animation: bg 60s linear infinite;
-		animation: bg 60s linear infinite;
-		-moz-backface-visibility: hidden;
-		-webkit-backface-visibility: hidden;
-		-ms-backface-visibility: hidden;
-		backface-visibility: hidden;
-		-moz-transform: translate3d(0,0,0);
-		-webkit-transform: translate3d(0,0,0);
-		-ms-transform: translate3d(0,0,0);
-		transform: translate3d(0,0,0);
-	/* Set your background with this */
-
-		background: #348cb2 url("images/bg.jpg") bottom left;
-		background-repeat: repeat-x;
-		height: 100%;
-		left: 0;
-		opacity: 1;
-		position: fixed;
-		top: 0;
+	position: fixed;
+	inset: 0;
+	overflow: hidden;              /* oculta el deslizamiento fuera de la vista */
+	opacity: 1;
+	backface-visibility: hidden;
+	transform: translate3d(0,0,0);
 	}
 
-	@-moz-keyframes bg {
-		0% {
-			-moz-transform: translate3d(0,0,0);
-			-webkit-transform: translate3d(0,0,0);
-			-ms-transform: translate3d(0,0,0);
-			transform: translate3d(0,0,0);
-		}
-
-		100% {
-			-moz-transform: translate3d(-2250px,0,0);
-			-webkit-transform: translate3d(-2250px,0,0);
-			-ms-transform: translate3d(-2250px,0,0);
-			transform: translate3d(-2250px,0,0);
-		}
+	/* Usamos un pseudo-elemento 2× más ancho que la pantalla y lo deslizamos */
+	#bg::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200%;                   /* el doble de ancho para un loop suave */
+	height: 100%;
+	background: #348cb200 url("images/bg.jpg") repeat-x center;
+	background-size: auto 100%;    /* mantiene proporciones SIN deformar; rellena en X */
+	will-change: transform;
+	animation: bg-slide 60s linear infinite;
 	}
 
-	@-webkit-keyframes bg {
-		0% {
-			-moz-transform: translate3d(0,0,0);
-			-webkit-transform: translate3d(0,0,0);
-			-ms-transform: translate3d(0,0,0);
-			transform: translate3d(0,0,0);
-		}
-
-		100% {
-			-moz-transform: translate3d(-2250px,0,0);
-			-webkit-transform: translate3d(-2250px,0,0);
-			-ms-transform: translate3d(-2250px,0,0);
-			transform: translate3d(-2250px,0,0);
-		}
+	/* Desliza media longitud (50%) para cerrar el bucle perfecto */
+	@keyframes bg-slide {
+	from { transform: translateX(0); }
+	to   { transform: translateX(-50%); }
 	}
 
-	@-ms-keyframes bg {
-		0% {
-			-moz-transform: translate3d(0,0,0);
-			-webkit-transform: translate3d(0,0,0);
-			-ms-transform: translate3d(0,0,0);
-			transform: translate3d(0,0,0);
-		}
-
-		100% {
-			-moz-transform: translate3d(-2250px,0,0);
-			-webkit-transform: translate3d(-2250px,0,0);
-			-ms-transform: translate3d(-2250px,0,0);
-			transform: translate3d(-2250px,0,0);
-		}
+	/* (Opcional) móviles: animación un poco más lenta */
+	@media (max-width: 768px) {
+	#bg::before { animation-duration: 80s; }
 	}
 
-	@keyframes bg {
-		0% {
-			-moz-transform: translate3d(0,0,0);
-			-webkit-transform: translate3d(0,0,0);
-			-ms-transform: translate3d(0,0,0);
-			transform: translate3d(0,0,0);
-		}
-
-		100% {
-			-moz-transform: translate3d(-2250px,0,0);
-			-webkit-transform: translate3d(-2250px,0,0);
-			-ms-transform: translate3d(-2250px,0,0);
-			transform: translate3d(-2250px,0,0);
-		}
+	/* (Opcional) respeta reduce motion */
+	@media (prefers-reduced-motion: reduce) {
+	#bg::before { animation: none; }
 	}
 
-	#bg {
-		background-size: 2250px auto;
-		width: 6750px;
-	}
+
 
 /* Overlay */
 
