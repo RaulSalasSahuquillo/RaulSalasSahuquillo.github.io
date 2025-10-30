@@ -1,40 +1,84 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <br />
-    <br />
-    <br />
-    <br />
     <title>Raúl Salas Sahuquillo</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" type="image/png" href="assets/logors.png" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    
+    <link rel="stylesheet" href="assets/css/style.css" />
     <style>
       html, body {
-        overflow: auto !important; /* Fuerza a que haya scroll si el contenido es largo */
+        overflow: auto !important;
         height: auto !important;
       }
-      
+
       #wrapper, #overlay {
-        height: auto !important; /* Anula la altura fija de los contenedores */
+        height: auto !important;
         min-height: 100%;
         position: relative !important;
       }
 
-      /* La plantilla usa Flexbox para centrar. Lo cambiamos para que alinee arriba */
       body, #main {
         align-items: flex-start !important; 
       }
-      
+
       #main {
         position: relative !important;
-        padding: 4em 2em; /* Añadimos algo de espacio */
+        padding: 4em 2em;
+      }
+
+      /* contenedor de la sección "sobre mí" + foto */
+      .sobre-mi-wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 360px;              /* ← más separación entre texto e imagen */
+        margin: 120px;
+        flex-wrap: wrap;
+        font-family: Copperplate;
+      }
+
+      #sobre-mi {
+        padding: 2em 0;
+        text-align: center;
+        max-width: 800px;        /* ← el texto ahora ocupa más ancho */
+        font-family: Copperplate;
+      }
+
+      #sobre-mi h2 {
+        font-size: 3.2em;
+        margin-bottom: 1em;
+        border-bottom: 2px solid #fff;
+        display: inline-block;
+        padding-bottom: .3em;
+      }
+
+      #foto_mia {
+        max-width: 250px;
+      }
+
+      #foto_mia img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      /* En pantallas pequeñas que baje uno debajo del otro */
+      @media (max-width: 1000px) {
+        .sobre-mi-wrapper {
+          gap: 60px;
+          margin: 60px 20px;
+          justify-content: center;
+        }
+
+        #sobre-mi {
+          max-width: 95%;
+          text-align: center;
+        }
       }
     </style>
-    </head>
+  </head>
   <body class="is-preload">
     <div id="wrapper">
       <div id="bg"></div>
@@ -42,9 +86,11 @@
       <div id="main">
 
         <header id="header">
-          <a href="index.html" class="logors">
-            <img src="assets/logors.png" alt="Logo Raúl Salas" width="250" />
-          </a>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <h1>Raúl Salas Sahuquillo</h1>
           <p>Game Developer &nbsp;&bull;&nbsp; Software Engineer &nbsp;&bull;&nbsp; Web Developer</p>
           <nav>
@@ -57,6 +103,9 @@
           </nav>
         </header>
 
+        <!-- separador que ya tenías -->
+        <br />
+        <br />
         <br />
         <br />
         <br />
@@ -73,30 +122,31 @@
         <br />
         <br />
 
-<div style="display: flex; align-items: flex-start; justify-content: center; gap: 180px; margin: 40px; flex-wrap: wrap; font-family: Copperplate">
+        <!-- CONTENEDOR SOBRE MÍ + FOTO -->
+        <div class="sobre-mi-wrapper">
 
-  <!-- Sección de texto -->
-  <section id="sobre-mi" style="padding: 2em 0; text-align: center; max-width: 650px; margin-left: 40px; font-family: Copperplate">
-  <h2 style="font-size: 3em; margin-bottom: 1em;">Sobre mí</h2>
-  <p>
-    ¡Hola! Soy Raúl, un estudiante de secundaria que está aprendiendo desarrollo de videojuegos y programación. Me apasiona crear juegos y aplicaciones, mientras aprendo nuevas habilidades en el proceso.
-  </p>
-  <br />
-  <p>
-    Actualmente, estoy trabajando en mi propio proyecto de videojuego llamado "ENEI PROJECT". Además, estoy aprendiendo a programar en varios lenguajes como C, Python, Java y HTML. Estoy abierto a nuevas oportunidades y colaboraciones en el mundo de la programación.
-  </p>
-</section>
+          <!-- Sección de texto -->
+          <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>
+              ¡Hola! Soy Raúl, un estudiante de secundaria que está aprendiendo desarrollo de videojuegos y programación. Me apasiona crear juegos y aplicaciones, mientras aprendo nuevas habilidades en el proceso.
+            </p>
+            <br />
+            <p>
+              Actualmente, estoy trabajando en mi propio proyecto de videojuego llamado "ENEI PROJECT". Además, estoy aprendiendo a programar en varios lenguajes como C, Python, Java y HTML. Estoy abierto a nuevas oportunidades y colaboraciones en el mundo de la programación.
+            </p>
+          </section>
 
-  <!-- Sección de imagen -->
-  <section id="foto_mia" style="max-width: 250px;">
-    <a href="index.html" class="logors">
-      <img src="assets/logors.png" alt="Raúl Salas Sahuquillo" style="width: 100%; border-radius: 10px;" />
-    </a>
-  </section>
+          <!-- Sección de imagen -->
+          <section id="foto_mia">
+            <a href="index.html" class="logors">
+              <img src="assets/raulsalas.jpg" alt="Raúl Salas Sahuquillo" />
+            </a>
+          </section>
 
-</div>
+        </div>
+        <!-- FIN CONTENEDOR -->
 
-       
         <footer id="footer">
           <span class="copyright">&copy; Raúl Salas Sahuquillo | ENEI PROJECT</span>
         </footer>
@@ -106,7 +156,6 @@
 
     <script>
       window.onload = function() { document.body.classList.remove('is-preload'); }
-      // window.ontouchmove = function() { return false; } 
       window.onorientationchange = function() { document.body.scrollTop = 0; }
     </script>
   </body>

@@ -1,0 +1,38 @@
+/* 1. Cursor global */
+body {
+  cursor: url("../cursor.png"), auto;
+}
+
+/* 2. Cursor al pasar por enlaces / iconos */
+a:hover,
+button:hover,
+img:hover {
+  cursor: url("../cursorpresionado.png"), pointer;
+}
+
+/* 3. Por si tu plantilla tiene un overlay encima */
+#overlay {
+  pointer-events: none;
+  cursor: inherit;
+}
+
+/* 4. Solo tu bloque de “sobre mí” */
+.sobre-mi-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 360px;    /* separa texto e imagen */
+  margin: 120px;
+  flex-wrap: wrap;
+  font-family: Copperplate, serif;
+}
+
+#sobre-mi {
+  max-width: 800px;    /* que ocupe más */
+  text-align: center;
+  padding: 2em 0;
+}
+
+#foto_mia {
+  max-width: 250px;
+}
